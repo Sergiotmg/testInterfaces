@@ -14,6 +14,10 @@ class Person(val nombre: String="",val edad: Int=0) : Speaker {// si solo tiene 
     // val es como decir val edad=this.edad
     //val direccion: String// no puede ser null
 
+    init {
+        edad.plus(2)
+    }
+
     val direccion: String?=null//asi puede ser null, con ? puede sertodo nulo
 
 
@@ -23,5 +27,12 @@ class Person(val nombre: String="",val edad: Int=0) : Speaker {// si solo tiene 
 
     fun test() {
         println("test")
+
+    }
+
+    //al poner 2 pers a sumar es devovler la suma de las 2 edades
+    //cada vez qwue haga plus hará lo de abajo
+    operator fun plus (other:Person): Int{
+        return other.edad+this.edad
     }
 }

@@ -1,19 +1,23 @@
 
 import java.util.ArrayList
 
-object Main {
-    @JvmStatic
+
+    //@JvmStatic// en kotlin no hay metodos estaticos
     fun main(args: Array<String>) {
         //val dan = Player()
         val dan: Player = Player()// dan debe ir pegado a los dos puntos
         //val test = ""
         val chris = Person(edad=1,nombre="Sergio")// pasados sin el mismo orden y funciona!
-        val chris3 = Person()
+        val chris3 = Person(edad=6)
+        val testHuman=Human()
+        testHuman.edad=54
         val grez = Monster()
         //var x: Int=1// se que es tipo Integer
         //var y: Float=1f
 
-        //val test=dan + chris
+
+        val test=chris + chris3
+        println("La suma de edades es $test")
 
 
         dan.talkTo(chris) // prints "Hello."
@@ -57,5 +61,13 @@ object Main {
         val x=speakers.size
         val chris2 = speakers[0] as Person//encapsulacion de java con casteo
         chris2.test()
+        // TEST STRING CONTAR A
+
+        val stringTest= "Hola a todos voy a contar cuantas A existen"
+        println(stringTest.countCharacter('a'))
+        test()
+
+
+
     }
-}
+
