@@ -1,4 +1,5 @@
 class Person(val nombre: String="",val edad: Int=0) : Speaker {// si solo tiene un cosntructor se pone arriba con (edad: Int)
+    // ahi hay que poner espacio :
     //val es para poderlo utilizar en toda nuestra clase si no solo sirve pa ralos constructores o solo para inicializar
     //asi val se puede utilziar en speak
     //si no habria que hacer:
@@ -21,9 +22,7 @@ class Person(val nombre: String="",val edad: Int=0) : Speaker {// si solo tiene 
     val direccion: String?=null//asi puede ser null, con ? puede sertodo nulo
 
 
-    override fun speak() {
-        println("Hola $nombre $edad")// mas comodo para mostrar
-    }
+    override fun speak() = println("Hola $nombre $edad")    // con = ahorramos corchetes
 
     fun test() {
         println("test")
@@ -32,7 +31,13 @@ class Person(val nombre: String="",val edad: Int=0) : Speaker {// si solo tiene 
 
     //al poner 2 pers a sumar es devovler la suma de las 2 edades
     //cada vez qwue haga plus hará lo de abajo
+    /*
     operator fun plus (other:Person): Int{
         return other.edad+this.edad
-    }
+    }*/
+
+    // mas sencillo convencion
+    operator fun plus (other:Person): Int=  other.edad+this.edad
+
+
 }
